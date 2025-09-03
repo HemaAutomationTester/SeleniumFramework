@@ -61,6 +61,7 @@ public class BaseTest {
 	
 	@AfterTest
 	public void tearDown() {
+		System.out.println("Quiting the browser");
 		driver.quit();
 	}
 }

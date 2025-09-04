@@ -31,7 +31,7 @@ public class RegisterPage {
 	private final By continueButton = By.xpath("//input[@value='Continue']");
 
 	private final By logoutLink = By.linkText("Logout");
-	private final By loginLink = By.linkText("Login");
+	private final By registerLink = By.linkText("Register");
 
 	public String getPageHeader() {
 		String headerText = eleUtil.getElement(pageHeader).getText();
@@ -39,13 +39,13 @@ public class RegisterPage {
 	}
 
 	public void fillRegisterForm(String firstName, String lastName, String email, String phone, String password,
-			String confirmPassword, String susbscribe) {
+			 String susbscribe) {
 		eleUtil.doSendKeys(this.firstName, firstName);
 		eleUtil.doSendKeys(this.lastName, lastName);
 		eleUtil.doSendKeys(this.email, email);
 		eleUtil.doSendKeys(this.phone, phone);
 		eleUtil.doSendKeys(this.password, password);
-		eleUtil.doSendKeys(this.confirmPassword, confirmPassword);
+		eleUtil.doSendKeys(confirmPassword, password);
 
 		if (susbscribe.equalsIgnoreCase("yes")) {
 			eleUtil.doClick(susbsribeYes);
@@ -61,7 +61,7 @@ public class RegisterPage {
 
 		if (successMessage.contains(AppConstants.REGISTER_SUCCESS_MESSAGE)) {
 			eleUtil.doClick(logoutLink);
-			eleUtil.doClick(loginLink);
+			eleUtil.doClick(registerLink);
 		}
 
 	}

@@ -17,6 +17,7 @@ import com.qa.opencart.listeners.TestAllureListener;
 import com.qa.opencart.pages.AccountPage;
 import com.qa.opencart.pages.LoginPage;
 import com.qa.opencart.pages.ProductPage;
+import com.qa.opencart.pages.RegisterPage;
 import com.qa.opencart.pages.SearchResultPage;
 
 import io.qameta.allure.Description;
@@ -33,6 +34,7 @@ public class BaseTest {
 	protected AccountPage accPage;
 	protected SearchResultPage searchResultPage;
 	protected ProductPage prodPage;
+	protected RegisterPage regPage;
 
 	@Description("launch the browser: {0} and url")
 	@Parameters({"browser"})

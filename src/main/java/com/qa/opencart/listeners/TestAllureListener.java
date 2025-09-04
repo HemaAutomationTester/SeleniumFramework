@@ -63,7 +63,7 @@ public class TestAllureListener implements ITestListener {
 		// Allure ScreenShotRobot and SaveTestLog
 		if (DriverFactory.getDriver() instanceof WebDriver) {
 			System.out.println("Screenshot captured for test case:" + getTestMethodName(iTestResult));
-			saveScreenshotPNG(DriverFactory.getDriver());
+			 saveScreenshotPNG(DriverFactory.getDriver());
 		}
 		// Save a log on allure.
 		saveTextLog(getTestMethodName(iTestResult) + " failed and screenshot taken!");		

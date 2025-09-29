@@ -5,6 +5,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import com.qa.opencart.base.BaseTest;
 import com.qa.opencart.utils.ExcelUtil;
+import com.qa.opencart.utils.StringUtils;
 
 
 public class RegisterPageTest extends BaseTest {
@@ -24,7 +25,7 @@ public class RegisterPageTest extends BaseTest {
 	@Test(dataProvider="getRegExcel")
 	public void doRegistrationTest(String firstName, String lastName, String phone, String password,
 		 String susbscribe ) {
-		regPage.fillRegisterForm(firstName, lastName, com.qa.opencart.utils.StringUtils.getRandomEMail(), phone, password, susbscribe);
+		regPage.fillRegisterForm(firstName, lastName, StringUtils.getRandomEMail(), phone, password, susbscribe);
 	}
 
 }

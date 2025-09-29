@@ -24,18 +24,21 @@ public class ProductPage {
 	private final By productTitle = By.xpath("//h1");
 	private final By productInfo = By.xpath("(//div[@class='col-sm-4']/ul[@class='list-unstyled'])[1]/li");
 	private final By productPricingInfo = By.xpath("(//div[@class='col-sm-4']/ul[@class='list-unstyled'])[2]/li");
+	private final By addToCart = By.xpath("button-cart");
+	private final By inputQuantity = By.id("input-quantity");
 
-	//This product is used to get the image count of the product.
-	
+	// This product is used to get the image count of the product.
+
 	public int getProductImageCount() {
 		List<WebElement> productImages = eleUtil.getElements(productImage);
 		int productImagesCount = productImages.size();
 		return productImagesCount;
 	}
-	
-	// This method will get the product details like Brand/Product Code/ Availability etc from product page. 
+
+	// This method will get the product details like Brand/Product Code/
+	// Availability etc from product page.
 	// Here we have used String's Spilt method and stored the values in HashMap.
-	
+
 	public Map<String, String> getProductDetails() {
 		List<WebElement> productDetails = eleUtil.getElements(productInfo);
 
@@ -47,10 +50,10 @@ public class ProductPage {
 		}
 		return productMap;
 	}
-	
-	
-	//This method is used to get the product price from the product page like real price and ex price. 
-	
+
+	// This method is used to get the product price from the product page like real
+	// price and ex price.
+
 	public Map<String, String> getProductPricing() {
 		List<WebElement> productPricingDetails = eleUtil.getElements(productPricingInfo);
 		String productPrice = productPricingDetails.get(0).getText();
@@ -63,6 +66,11 @@ public class ProductPage {
 	public String getProductHeader() {
 		String productHeaderTitle = eleUtil.getElement(productTitle).getText();
 		return productHeaderTitle;
+	}
+
+	public int getProductQuantity() {
+		int qty = Integer.parseInt(eleUtil.getElement(inputQuantity).getText());
+		return qty;
 	}
 
 }

@@ -13,6 +13,9 @@ public class CartPage {
 		driver = this.driver;
 		eleUtil = new ElementUtil(driver);
 	}
+	
+	// page locators 
+	
 
 	
 	

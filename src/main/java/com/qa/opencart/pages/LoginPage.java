@@ -9,7 +9,7 @@ public class LoginPage {
 	WebDriver driver;
 	ElementUtil eleUtil;
 
-	// Constructor to initialize the driver.
+	// Constructor to initialize the driver and elementUtil.
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
 		eleUtil = new ElementUtil(driver);
@@ -22,6 +22,7 @@ public class LoginPage {
 	By forgot_password = By.linkText("Forgotten Password");
 	By login_button = By.xpath("//input[@type='submit']");
 	By register_link = By.linkText("Register");
+	By forgot_passwordLink = By.linkText("Forgotten Password");
 
 	// Actions on element
 
@@ -46,10 +47,24 @@ public class LoginPage {
 		eleUtil.doClick(login_button);
 		return new AccountPage(driver);
 	}
-
 	
+	// Function to check forgot password link 
+	public ForgotPasswordPage clickForgotPasswordLink() {
+		eleUtil.doClick(forgot_passwordLink);
+		return new ForgotPasswordPage(driver);
+	}
+
+	// Function to go to the register page from login page. 
 	public RegisterPage goToRegister() {
 		eleUtil.getElement(register_link).click();
 		return new RegisterPage(driver);
 	}
+	
+	// Function to go to the ForgotPassword page from login page. 
+	public ForgotPasswordPage toGoToForgotPassword() {
+		eleUtil.doClick(forgot_passwordLink);
+		return new ForgotPasswordPage(driver);
+	}
+	
+	
 }

@@ -15,6 +15,7 @@ import com.aventstack.chaintest.plugins.ChainTestListener;
 import com.qa.opencart.factory.DriverFactory;
 import com.qa.opencart.listeners.TestAllureListener;
 import com.qa.opencart.pages.AccountPage;
+import com.qa.opencart.pages.ForgotPasswordPage;
 import com.qa.opencart.pages.LoginPage;
 import com.qa.opencart.pages.ProductPage;
 import com.qa.opencart.pages.RegisterPage;
@@ -35,6 +36,7 @@ public class BaseTest {
 	protected SearchResultPage searchResultPage;
 	protected ProductPage prodPage;
 	protected RegisterPage regPage;
+	protected ForgotPasswordPage forgotPwdPage;
 
 	@Description("launch the browser: {0} and url")
 	@Parameters({"browser"})

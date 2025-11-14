@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -27,7 +28,6 @@ public class AccountPage {
 	private final By search = By.xpath("//input[@name='search']");
 	private final By searchButton = By.xpath("//div[@id='search']//button");
 
-	
 	@Step("Fetching the list of nav menu items..")
 	// To get the NavMenu- headerMenu links text
 	public List<String> getNavMenuItems() {
@@ -46,7 +46,7 @@ public class AccountPage {
 		eleUtil.doSendKeys(search, keyword.trim().toLowerCase());
 		eleUtil.doClick(searchButton);
 		return new SearchResultPage(driver);
-		
+
 	}
 
 	@Step("Fetching the sidemenu links...")
@@ -68,6 +68,8 @@ public class AccountPage {
 
 	@Step("Checking if logout link is visible...	")
 	public boolean isLogoutVisible() {
-		return driver.findElement(logout).isDisplayed();
+		WebElement element = eleUtil.waitForElementVisible(logout, 4);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+		return element.isDisplayed();
 	}
 }

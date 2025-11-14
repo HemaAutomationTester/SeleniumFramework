@@ -48,7 +48,4 @@ public class LoginPageTest extends BaseTest {
 		Assert.assertTrue(accPage.isLogoutVisible());
 		System.out.println("The user has logged in successfully!!");
 	}
-	
-	
-
 }

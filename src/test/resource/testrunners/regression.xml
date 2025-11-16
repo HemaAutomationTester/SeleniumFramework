@@ -17,7 +17,6 @@
 		<parameter name="browser" value="chrome" />
 		<!--<parameter name="username" value="hemlata@mailadsvdm.com" />
 		<parameter name="password" value="Test@1234567" />-->
-
 		<classes>
 			<class name="com.qa.opencart.tests.LoginPageTest" />
 		</classes>
@@ -26,7 +25,6 @@
 
 	<test name="Login Page Test_firefox">
 		<parameter name="browser" value="firefox" />
-
 		<classes>
 			<class name="com.qa.opencart.tests.LoginPageTest" />
 		</classes>
